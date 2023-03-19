@@ -11,10 +11,33 @@ public class EmpleadoPorHoras extends Empleado {
    public EmpleadoPorHoras()
    {
       super();
-      String salarioHoraString = JOptionPane.showInputDialog(null, "Salario por hora");
-      this.sueldoPorHora = Integer.parseInt(salarioHoraString);
-      String horasString = JOptionPane.showInputDialog(null, "Horas trabajadas");
-      this.horas = Integer.parseInt(horasString);
+      
+      // Valida que el numero no contenga caracteres diferentes a los numericos
+      for(int i = 0; i < 1; i++){
+         String salarioHoraString = JOptionPane.showInputDialog(null, "Salario por hora");
+         if(salarioHoraString != null && salarioHoraString.matches("[0-9]+")){
+            this.sueldoPorHora = Integer.parseInt(salarioHoraString);
+            break;
+         }
+         JOptionPane.showMessageDialog(null, "Valor invalido, ingreselo nuevamente");
+         i--;
+         continue;
+      }
+
+
+      // Valida que el numero no contenga caracteres diferentes a los numericos
+      for(int i = 0; i < 1; i++){
+         String horasString = JOptionPane.showInputDialog(null, "Horas trabajadas"); 
+         if(horasString != null && horasString.matches("[0-9]+")){
+            this.horas = Integer.parseInt(horasString);
+            break;
+         }
+         JOptionPane.showMessageDialog(null, "Valor invalido, ingreselo nuevamente");
+         i--;
+         continue;
+      }
+
+
       setSueldo( this.sueldoPorHora );
       setHoras( this.horas );
    } 

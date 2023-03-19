@@ -10,8 +10,20 @@ public class EmpleadoBaseMasComision extends EmpleadoPorComision {
    public EmpleadoBaseMasComision()
    {
       super();
-      String salarioBaseString = JOptionPane.showInputDialog("salario Base");
-      this.salarioBase = Integer.parseInt(salarioBaseString);
+
+      // Valida que el numero no contenga caracteres diferentes a los numericos
+      for(int i = 0; i < 1; i++){
+         String salarioBaseString = JOptionPane.showInputDialog(null,"salario Base");
+         if(salarioBaseString != null && salarioBaseString.matches("[0-9]+")){
+            this.salarioBase = Integer.parseInt(salarioBaseString);
+            break;
+         }
+         JOptionPane.showMessageDialog(null, "Valor invalido, ingreselo nuevamente");
+         i--;
+         continue;
+      }
+      
+
       setSalarioBase(this.salarioBase);
    } 
 

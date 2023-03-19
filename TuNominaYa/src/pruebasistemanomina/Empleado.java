@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 public abstract class Empleado {
    protected String primerNombre;
    protected String apellidoPaterno;
-   protected String numeroSeguroSocial;
+   protected int numeroSeguroSocial;
    protected double salario;
 
    // constructor
@@ -13,9 +13,30 @@ public abstract class Empleado {
    {
       this.primerNombre = JOptionPane.showInputDialog(null, "Nombre: ");
       this.apellidoPaterno = JOptionPane.showInputDialog(null, "Apellido Paterno: ");
-      this.numeroSeguroSocial = JOptionPane.showInputDialog(null, "Numero seguro social");
-      String salarioString = JOptionPane.showInputDialog(null, "Salario");
-      this.salario = Integer.parseInt(salarioString);
+
+      // Valida que el numero no contenga caracteres diferentes a los numericos
+      for(int i = 0; i < 1; i++){
+         String numeroSeguroSocialString =  JOptionPane.showInputDialog(null, "Numero seguro social");
+         if(numeroSeguroSocialString != null && numeroSeguroSocialString.matches("[0-9]+")){
+            this.numeroSeguroSocial = Integer.parseInt(numeroSeguroSocialString);
+            break;
+         }
+         JOptionPane.showMessageDialog(null, "Valor invalido, ingreselo nuevamente");
+         i--;
+         continue;
+      }
+
+      // Valida que el numero no contenga caracteres diferentes a los numericos
+      for(int i = 0; i < 1; i ++){
+         String salarioString = JOptionPane.showInputDialog(null, "Salario");
+         if(salarioString != null && salarioString.matches("[0-9]+")){
+            this.salario = Integer.parseInt(salarioString);
+            break;
+         }
+         JOptionPane.showMessageDialog(null, "Valor invalido, ingreselo nuevamente");
+         i--;
+         continue;
+      }
    } 
 
    public void setPrimerNombre( String nombre )
@@ -39,15 +60,15 @@ public abstract class Empleado {
    } 
 
    // establecer el numero de seguro social
-   public void setNumeroSeguroSocial( String numero )
+   public void setNumeroSeguroSocial( int numero )
    {
       numeroSeguroSocial = numero;  // deberia validarse
    } 
 
    // devolver el numero de seguro social
-   public String getNumeroSeguroSocial()
+   public double getNumeroSeguroSocial()
    {
-      return numeroSeguroSocial;
+      return this.numeroSeguroSocial;
    } 
 
    // devolver representacion String del objeto Empleado

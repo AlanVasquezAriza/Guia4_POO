@@ -1,7 +1,5 @@
 package pruebasistemanomina;
 
-import javax.swing.JOptionPane;
-
 public class EmpleadoAsalariado extends Empleado {
    public double salarioSemanal;
 

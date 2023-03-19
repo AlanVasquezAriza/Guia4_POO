@@ -11,10 +11,31 @@ public class EmpleadoPorComision extends Empleado {
    public EmpleadoPorComision()
    {
       super();
-      String ventasTotalesString = JOptionPane.showInputDialog(null,"Ventas totales");
-      this.ventasTotales = Integer.parseInt(ventasTotalesString);
-      String tasaComisioneString = JOptionPane.showInputDialog(null, "Porcentaje comision");
-      this.tasaComision = Integer.parseInt(tasaComisioneString);
+
+      // Valida que el numero no contenga caracteres diferentes a los numericos
+      for(int i = 0; i < 1; i++){
+         String ventasTotalesString = JOptionPane.showInputDialog(null,"Ventas totales");
+         if(ventasTotalesString != null && ventasTotalesString.matches("[0-9]+")){
+            this.ventasTotales = Integer.parseInt(ventasTotalesString);
+            break;
+         }
+         JOptionPane.showMessageDialog(null, "Valor invalido, ingreselo nuevamente");
+         i--;
+         continue;
+      }
+
+      // Valida que el numero no contenga caracteres diferentes a los numericos
+      for(int i = 0; i < 1; i++){
+         String tasaComisioneString = JOptionPane.showInputDialog(null, "Porcentaje comision");
+         if(tasaComisioneString != null && tasaComisioneString.matches("[0-9]+")){
+            this.tasaComision = Integer.parseInt(tasaComisioneString);
+            break;
+         }
+         JOptionPane.showMessageDialog(null, "Valor invalido, ingreselo nuevamente");
+         i--;
+         continue;
+      }
+
       setVentasTotales( this.ventasTotales );
       setTasaComision( this.tasaComision );
    } 
