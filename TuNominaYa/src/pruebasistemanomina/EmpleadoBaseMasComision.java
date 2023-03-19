@@ -1,16 +1,18 @@
 package pruebasistemanomina;
 // La clase EmpleadoBaseMasComision que extiende a EmpleadoPorComision.
 
+import javax.swing.JOptionPane;
+
 public class EmpleadoBaseMasComision extends EmpleadoPorComision {
    public double salarioBase;  // salario base por semana
 
    // constructor
-   public EmpleadoBaseMasComision( String nombre, String apellido, 
-      String numeroSeguroSocial, double cantidadVentasTotales,
-      double tasa, double cantidadSalarioBase )
+   public EmpleadoBaseMasComision()
    {
-      super( nombre, apellido, numeroSeguroSocial, cantidadVentasTotales, tasa );
-      setSalarioBase( cantidadSalarioBase );
+      super();
+      String salarioBaseString = JOptionPane.showInputDialog("salario Base");
+      this.salarioBase = Integer.parseInt(salarioBaseString);
+      setSalarioBase(this.salarioBase);
    } 
 
    // establecer el salario base del empleado con salario base mas comision

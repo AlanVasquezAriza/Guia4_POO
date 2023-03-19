@@ -1,14 +1,15 @@
 package pruebasistemanomina;
 
+import javax.swing.JOptionPane;
+
 public class EmpleadoAsalariado extends Empleado {
    public double salarioSemanal;
 
    // constructor
-   public EmpleadoAsalariado( String nombre, String apellido, 
-      String numeroSeguroSocial, double salario )
+   public EmpleadoAsalariado()
    {
-      super( nombre, apellido, numeroSeguroSocial ); 
-      setSalarioSemanal( salario );
+      super(); 
+      setSalarioSemanal( this.salario );
    } 
 
    // establecer el salario del empleado asalariado
@@ -31,7 +32,7 @@ public class EmpleadoAsalariado extends Empleado {
       return getSalarioSemanal();
    } 
 
-   // devolver la representaci�n String del objeto EmpleadoAsalariado
+   // devolver la representacion String del objeto EmpleadoAsalariado
    @Override
    public String toString()
    {

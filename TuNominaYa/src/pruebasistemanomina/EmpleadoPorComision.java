@@ -1,18 +1,22 @@
 package pruebasistemanomina;
 // La clase EmpleadoPorComision que extiende a Empleado.
 
+import javax.swing.JOptionPane;
+
 public class EmpleadoPorComision extends Empleado {
    protected double ventasTotales;      // ventas totales por semana
    protected double tasaComision;  // porcentaje de comisi�n
 
    // constructor
-   public EmpleadoPorComision( String nombre, String apellido, 
-      String numeroSeguroSocial, 
-      double ventasTotalesSemana, double porcentaje )
+   public EmpleadoPorComision()
    {
-      super( nombre, apellido, numeroSeguroSocial );
-      setVentasTotales( ventasTotalesSemana );
-      setTasaComision( porcentaje );
+      super();
+      String ventasTotalesString = JOptionPane.showInputDialog(null,"Ventas totales");
+      this.ventasTotales = Integer.parseInt(ventasTotalesString);
+      String tasaComisioneString = JOptionPane.showInputDialog(null, "Porcentaje comision");
+      this.tasaComision = Integer.parseInt(tasaComisioneString);
+      setVentasTotales( this.ventasTotales );
+      setTasaComision( this.tasaComision );
    } 
 
    public void setTasaComision( double tasa )

@@ -1,17 +1,21 @@
 package pruebasistemanomina;
+import javax.swing.JOptionPane;
 // La superclase abstracta Empleado.
 
 public abstract class Empleado {
    protected String primerNombre;
    protected String apellidoPaterno;
    protected String numeroSeguroSocial;
+   protected double salario;
 
    // constructor
-   public Empleado( String nombre, String apellido, String ssn )
+   public Empleado()
    {
-      primerNombre = nombre;
-      apellidoPaterno = apellido;
-      numeroSeguroSocial = ssn;
+      this.primerNombre = JOptionPane.showInputDialog(null, "Nombre: ");
+      this.apellidoPaterno = JOptionPane.showInputDialog(null, "Apellido Paterno: ");
+      this.numeroSeguroSocial = JOptionPane.showInputDialog(null, "Numero seguro social");
+      String salarioString = JOptionPane.showInputDialog(null, "Salario");
+      this.salario = Integer.parseInt(salarioString);
    } 
 
    public void setPrimerNombre( String nombre )

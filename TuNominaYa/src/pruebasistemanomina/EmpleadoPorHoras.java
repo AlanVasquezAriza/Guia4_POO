@@ -1,29 +1,34 @@
 package pruebasistemanomina;
 // La clase EmpleadoPorHoras que extiende a Empleado.
 
+import javax.swing.JOptionPane;
+
 public class EmpleadoPorHoras extends Empleado {
-   private double sueldo;   // sueldo por hora
+   private double sueldoPorHora;   // sueldoPorHora por hora
    private double horas;  // horas trabajadas en la semana
 
    // constructor
-   public EmpleadoPorHoras( String nombre, String apellido, 
-      String numeroSeguroSocial, double sueldoPorHora, double horasTrabajadas )
+   public EmpleadoPorHoras()
    {
-      super( nombre, apellido, numeroSeguroSocial );
-      setSueldo( sueldoPorHora );
-      setHoras( horasTrabajadas );
+      super();
+      String salarioHoraString = JOptionPane.showInputDialog(null, "Salario por hora");
+      this.sueldoPorHora = Integer.parseInt(salarioHoraString);
+      String horasString = JOptionPane.showInputDialog(null, "Horas trabajadas");
+      this.horas = Integer.parseInt(horasString);
+      setSueldo( this.sueldoPorHora );
+      setHoras( this.horas );
    } 
 
-   // establecer sueldo de empleado por horas
+   // establecer sueldoPorHora de empleado por horas
    public void setSueldo( double cantidadSueldo )
    {
-      sueldo = cantidadSueldo < 0.0 ? 0.0 : cantidadSueldo;
+      sueldoPorHora = cantidadSueldo < 0.0 ? 0.0 : cantidadSueldo;
    } 
 
-   // devolver sueldo
+   // devolver sueldoPorHora
    public double getSueldo()
    {
-      return sueldo;
+      return sueldoPorHora;
    } 
 
    // establecer horas trabajadas del empleado por horas
@@ -44,9 +49,9 @@ public class EmpleadoPorHoras extends Empleado {
    public double ingresos()
    {
       if ( horas <= 40 )  // sin tiempo extra
-         return sueldo * horas;
+         return sueldoPorHora * horas;
       else
-         return 40 * sueldo + ( horas - 40 ) * sueldo * 1.5;
+         return 40 * sueldoPorHora + ( horas - 40 ) * sueldoPorHora * 1.5;
    } 
 
    // devolver la representaci�n String del objeto EmpleadoPorHoras

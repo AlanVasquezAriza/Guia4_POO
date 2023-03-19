@@ -1,6 +1,5 @@
 package pruebasistemanomina;
 // Programa de prueba de la jerarqu�a Empleado.
-import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 public class PruebaSistemaNomina {
@@ -11,10 +10,18 @@ public class PruebaSistemaNomina {
       Empleado empleados[] = new Empleado[ 4 ];
 
       // inicializar arreglo con Empleados
-      empleados[ 0 ] = new EmpleadoAsalariado( "Juan", "P�rez", "111-11-1111", 800.00 );
-      empleados[ 1 ] = new EmpleadoPorComision( "Arlae", "Raz�n", "222-22-2222", 10000, .06 );
-      empleados[ 2 ] = new EmpleadoBaseMasComision( "Alfonso", "Romero", "333-33-3333", 5000, .04, 300 );
-      empleados[ 3 ] = new EmpleadoPorHoras( "Isabel", "Romero", "444-44-4444", 16.75, 40 );
+
+      JOptionPane.showMessageDialog(null, "Empleado Asalariado");
+      empleados[ 0 ] = new EmpleadoAsalariado();
+
+      JOptionPane.showMessageDialog(null, "Empleado Por Comision");
+      empleados[ 1 ] = new EmpleadoPorComision();
+
+      JOptionPane.showMessageDialog(null, "Empleado Base Mas Comision");
+      empleados[ 2 ] = new EmpleadoBaseMasComision();
+
+      JOptionPane.showMessageDialog(null, "Empleado Por Horas");
+      empleados[ 3 ] = new EmpleadoPorHoras();
 
       String salida = "";
 
@@ -39,12 +46,7 @@ public class PruebaSistemaNomina {
          salida += "\nIngresos $" + empleados[ i ].ingresos() + "\n";
       } 
 
-      // obtener nombre del tipo de cada objeto en el arreglo empleados
-//      for ( int j = 0; j < empleados.length; j++ )
-//        salida += "\nEl empleado " + j + " es un " + empleados[ j ].getClass().getName(); 
-
       JOptionPane.showMessageDialog( null, salida );
-
 
    }
 
