@@ -69,6 +69,7 @@ public class EmpleadoPorHoras extends Empleado {
 
    // calcular pago del empleado por horas;
    // sobrescribir el m�todo abstracto ingresos en Empleado
+   @Override
    public double ingresos()
    {
       if ( horas <= 40 )  // sin tiempo extra
@@ -78,6 +79,7 @@ public class EmpleadoPorHoras extends Empleado {
    } 
 
    // devolver la representaci�n String del objeto EmpleadoPorHoras
+   @Override
    public String toString()
    {
       return "\nEmpleado por horas: " + super.toString();

@@ -41,12 +41,14 @@ public class EmpleadoBaseMasComision extends EmpleadoPorComision {
 
    // calcular los ingresos del empleado con salario base m�s comisi�n;
    // sobrescribir el m�todo ingresos en EmpleadoPorComision
+   @Override
    public double ingresos()
    {
       return getSalarioBase() + super.ingresos();
    } 
 
    // devolver la representaci�n String de EmpleadoBaseMasComision
+   @Override
    public String toString()
    {
       return "\nEmpleado con salario base mas comision: " +
