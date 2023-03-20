@@ -4,8 +4,8 @@ package pruebasistemanomina;
 import javax.swing.JOptionPane;
 
 public class EmpleadoPorComision extends Empleado {
-   protected double ventasTotales;      // ventas totales por semana
-   protected double tasaComision;  // porcentaje de comisi�n
+   protected int ventasTotales;      // ventas totales por semana
+   protected int tasaComision;  // porcentaje de comisi�n
 
    // constructor
    public EmpleadoPorComision()
@@ -36,13 +36,13 @@ public class EmpleadoPorComision extends Empleado {
          continue;
       }
 
-      setVentasTotales( this.ventasTotales );
       setTasaComision( this.tasaComision );
+      setVentasTotales( this.ventasTotales );      
    } 
 
-   public void setTasaComision( double tasa )
+   public void setTasaComision( int tasa )
    {
-      tasaComision = ( tasa > 0.0 ) ? tasa : 0.0;
+      tasaComision = ( tasa > 0 ) ? tasa : 0;
    } 
 
    public double getTasaComision()
@@ -50,9 +50,9 @@ public class EmpleadoPorComision extends Empleado {
       return tasaComision;
    } 
 
-   public void setVentasTotales( double ventas )
+   public void setVentasTotales( int ventas )
    {
-      ventasTotales = ventas < 0.0 ? 0.0 : ventas;
+      ventasTotales = (ventas < 0) ? 0 : ventas; //&& tasa < 1.0 
    } 
 
    public double getVentasTotales()
@@ -65,7 +65,7 @@ public class EmpleadoPorComision extends Empleado {
    @Override
    public double ingresos()
    {
-      return getTasaComision() * getVentasTotales();
+      return getTasaComision() * getVentasTotales(); 
    } 
 
    // devolver la representaci�n String del objeto EmpleadoPorComision
@@ -76,4 +76,3 @@ public class EmpleadoPorComision extends Empleado {
    } 
    
 }
-

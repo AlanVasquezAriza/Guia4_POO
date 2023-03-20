@@ -13,7 +13,7 @@ public class EmpleadoAsalariado extends Empleado {
    // establecer el salario del empleado asalariado
    public void setSalarioSemanal( double salario )
    {
-      salarioSemanal = salario < 0.0 ? 0.0 : salario;
+      salarioSemanal = (salario < 0.0) ? 0.0 : salario;
    } 
 
    // devolver el salario del empleado asalariado

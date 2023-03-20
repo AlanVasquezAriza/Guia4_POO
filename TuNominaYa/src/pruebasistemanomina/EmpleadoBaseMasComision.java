@@ -57,4 +57,3 @@ public class EmpleadoBaseMasComision extends EmpleadoPorComision {
    } 
    
 } // fin de la clase EmpleadoBaseMasComision
-

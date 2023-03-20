@@ -78,8 +78,7 @@ public abstract class Empleado {
          "\nNumero de seguro social: " + getNumeroSeguroSocial();
    } 
 
-   // m�todo abstracto sobrescrito por las subclases
+   // metodo abstracto sobrescrito por las subclases
    public abstract double ingresos();
    
 }
-
