@@ -51,8 +51,8 @@ public class PruebaSistemaNomina {
       String delUser = JOptionPane.showInputDialog(null,"¿Quiere eliminar algun usuario?");
       
       if(delUser.equals("Si")){
-        String delUserNumString = JOptionPane.showInputDialog(null,"Que usuario \n 1. Empleado Asalariado 2. Empleado por Comision \n"
-                + "3. Empleado base mas comision 4. Empleado por horas");
+        String delUserNumString = JOptionPane.showInputDialog(null,"Que usuario \n 1. Empleado Asalariado \n2. Empleado por Comision \n"
+                + "3. Empleado base mas comision \n4. Empleado por horas");
         int delUserNum = Integer.parseInt(delUserNumString);
 
         switch(delUserNum){
@@ -106,6 +106,6 @@ public class PruebaSistemaNomina {
       else{
           System.out.println("No se ha eliminado ningun empleado");
       }
-       System.out.println("Hola cambio hh");
+      System.out.println("Hello world");
    }
 }
