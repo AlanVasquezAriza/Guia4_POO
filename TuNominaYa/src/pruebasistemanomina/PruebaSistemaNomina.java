@@ -48,6 +48,8 @@ public class PruebaSistemaNomina {
 
       JOptionPane.showMessageDialog( null, salida );
 
+
+      System.out.println("Hello world");
    }
 
 }
