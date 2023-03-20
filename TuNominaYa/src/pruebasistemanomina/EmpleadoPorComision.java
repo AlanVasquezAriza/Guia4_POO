@@ -42,7 +42,7 @@ public class EmpleadoPorComision extends Empleado {
 
    public void setTasaComision( double tasa )
    {
-      tasaComision = ( tasa > 0.0 && tasa < 1.0 ) ? tasa : 0.0;
+      tasaComision = ( tasa > 0.0 ) ? tasa : 0.0;
    } 
 
    public double getTasaComision()
