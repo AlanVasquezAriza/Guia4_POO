@@ -106,6 +106,5 @@ public class PruebaSistemaNomina {
       else{
           System.out.println("No se ha eliminado ningun empleado");
       }
-      System.out.println("Hello world");
    }
 }
